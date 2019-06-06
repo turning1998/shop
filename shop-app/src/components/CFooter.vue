@@ -40,6 +40,7 @@ export default {
   &-item a{
     outline: none;
     cursor: pointer;
+    color:#fff;
   }
 }
 
