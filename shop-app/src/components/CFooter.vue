@@ -1,6 +1,12 @@
 <!--底部-->
 <template>
-    <ul class="footer">
+    <van-tabbar v-model="active" active-color="#ff8000">
+      <van-tabbar-item icon="hot-sale" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="label" to="/classify">分类</van-tabbar-item>
+      <van-tabbar-item icon="cart" to="cart" >购物车</van-tabbar-item>
+      <van-tabbar-item icon="manager" to="mine" >我的</van-tabbar-item>
+      </van-tabbar>
+   <!--  <ul class="footer">
       <li class="footer-item">
         <router-link to="/">首页</router-link>
       </li>
@@ -13,17 +19,23 @@
       <li class="footer-item">
         <router-link to="mine" >我的</router-link>
         </li>
-    </ul>
+    </ul> -->
 </template>
 <script>
 
 export default {
   name: 'home',
-  components: {
-   
+  data() {
+    return {
+      active: 0
+    }
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>
+
+<!--
 <style lang="scss">
 .footer{
   display:flex;
@@ -46,4 +58,5 @@ export default {
 
 
 </style>
+-->
 

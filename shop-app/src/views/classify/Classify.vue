@@ -4,13 +4,14 @@
   <div class="classify">
       classify
   </div>
+
 </template>
 <script>
-
 export default {
   name: 'home',
-  components: {
-   
+  data() {
+    return {
+    };
   }
-}
+};
 </script>
