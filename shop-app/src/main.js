@@ -6,7 +6,7 @@ import './assets/css/reset.css'
 import './assets/js/rem'
 Vue.config.productionTip = false
 import { Lazyload,NavBar,Icon,Tabbar, TabbarItem,Swipe, SwipeItem } from 'vant';
-
+import './mock/mock.js';
 Vue.use(Lazyload);
 Vue.use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem);
 new Vue({

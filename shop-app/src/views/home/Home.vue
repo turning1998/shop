@@ -18,7 +18,7 @@
               </van-swipe-item>
             </van-swipe>
           </div>
-            <!--热门商品-->
+          <!--热门商品-->
           <div class="home-content-hot-commodity">
               <div class="home-content-hot-commodity-title">热门商品</div>
               <swiper class="home-content-hot-commodity-swiper"  :options="swiperOption">
@@ -30,15 +30,28 @@
                     </div>
                   </swiper-slide>
               </swiper>
-            </div>
+          </div>
+          <!--推荐商品-->
+          <div class="home-content-recommend-commodity">
+            <p class="home-content-recommend-commodity-title">推荐商品</p>
+            <ul class="home-content-recommend-commodity-item" >
+              <li v-for="(item,index) in recommendItem" :key="index">
+                    <img :src="item.img" alt="">
+                    <p class="name">{{item.name}}</p>
+                    <p>{{item.price}}</p>
+              </li>
+            </ul>
           </div>
     </div>
+  </div>
 </template>
 
 <script>
 
 import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
+import axios from 'axios'
+import url from './../../../src/'
 export default {
   name: 'home',
   components: {
@@ -132,16 +145,30 @@ export default {
       ], 
       swiperOption: {
         slidesPerView:3
-         
-        }
-
+        },
+      //推荐商品
+      recommendItem:[]
     }
+  },
+  created(){
+   /*  let url="http://www.yulang.com/getList";
+    let url2="http://www.yulang.com/getUser" */
+    //let url3="http://www.yulang.com/regxp"
+    //let url4="http://www.yulang.com/list"
+    let url='http://www.data.com/getrecommendList'
+    axios.get(url).then(res=>{
+      this.recommendItem=res.data;
+      console.log(this.recommendItem);
+    }).catch(()=>{
+      console.log("获取商品列表失败");
+    });
+
   }
 }
 </script>
 <style lang="scss">
 body{
-  height:3000px;
+  background-color: #c0c0c0;
 }
 .home{
    &-title{
@@ -150,6 +177,7 @@ body{
      left: 0;
      height: 1rem;
      width: 100%;
+     z-index:999;
    }
    &-content{
       margin:1rem 0;
@@ -166,6 +194,7 @@ body{
         }
       }
       &-hot-commodity{
+        background-color: #fff;
         &-title{
           width: 100%;
           height:0.5rem;
@@ -173,7 +202,8 @@ body{
           line-height: 0.5rem;
           text-align:left;
           box-sizing:border-box;
-          color: #ff0000;
+          color: #fff;
+          background-color: #ff8080;
         }
         &-swiper{
           &-content{
@@ -191,10 +221,60 @@ body{
           }
          }
       }
+      &-recommend-commodity{
+        background-color: #fff;
+        text-align: center;
+        &-title{
+          width: 100%;
+          height:0.5rem;
+          padding-left:0.2rem;
+          line-height: 0.5rem;
+          text-align:left;
+          box-sizing:border-box;
+          color: #fff;
+          background-color: #ff8080;;
+        }
+        &-item{
+          display: flex;
+          flex-wrap: wrap;//换行
+          justify-content: space-around;//水平对齐，间距相同，父元素设置
+          li{
+            flex-basis: 45%;//相当于设置width；但优先级高于width
+            img{
+              width: 2rem;
+              height: 2rem;
+            }
+            .name{
+               overflow: hidden;
+               text-overflow:ellipsis;
+               display: -webkit-box;
+               -webkit-box-orient:vertical;
+               -webkit-line-clamp:2;
+               width: 2rem;
+               margin: 0 auto;
+               height: 1rem;
+               
+            }
+          }
+        }
+
+
+      }
     }
 }
 
-/*.home-title{
+
+/*
+
+
+
+
+
+
+
+
+
+.home-title{
   position: fixed;
   top: 0;
   left: 0;
