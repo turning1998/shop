@@ -51,7 +51,7 @@
 import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
 import axios from 'axios'
-import url from './../../../src/'
+import url from '@/servie.config.js'
 export default {
   name: 'home',
   components: {
@@ -151,12 +151,7 @@ export default {
     }
   },
   created(){
-   /*  let url="http://www.yulang.com/getList";
-    let url2="http://www.yulang.com/getUser" */
-    //let url3="http://www.yulang.com/regxp"
-    //let url4="http://www.yulang.com/list"
-    let url='http://www.data.com/getrecommendList'
-    axios.get(url).then(res=>{
+    axios.get(url.getrecommendList).then(res=>{
       this.recommendItem=res.data;
       console.log(this.recommendItem);
     }).catch(()=>{

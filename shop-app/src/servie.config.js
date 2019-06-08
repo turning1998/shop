@@ -5,3 +5,4 @@ const URL={
     getrecommendList:MOCKURL+'getrecommendList',
     getHot:MOCKURL+"xxxx",
 }
+export default URL;
