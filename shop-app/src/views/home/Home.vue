@@ -51,7 +51,7 @@
 import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
 import axios from 'axios'
-import url from '@/servie.config.js'
+import url from '@/service.config.js'
 export default {
   name: 'home',
   components: {
