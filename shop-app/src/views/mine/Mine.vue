@@ -47,17 +47,22 @@ export default {
         data:{
           userName:this.registUsername,
           password:this.registPassword,
-
-
         }
       })
       .then(res=>{
+        if(res.data.code=200){
+         this.$toast.success('注册成功！');
+        }else{
+         this.$toast.fail('注册失败！');
+        }
 
       })
       .catch(err=>{
-
-      })
-
+         this.$toast.fail('注册失败！');
+      });
+      this.registPassword='';
+      this.registUsername='';
+      this.confirmPassword='';
 
     },
     loginHandler(){
