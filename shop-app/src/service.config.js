@@ -4,6 +4,7 @@ const SERVERURL="http://localhost:3000/";//真实URL,服务器地址
 const URL={
     getrecommendList:MOCKURL+'getrecommendList',
     getHot:MOCKURL+"xxxx",
-    registUser:SERVERURL+"user/registUser"
+    registUser:SERVERURL+"user/registUser",//注册  user控制器  下的方法-->registUser
+    loginUser:SERVERURL+"user/loginUser",
 }
 export default URL;

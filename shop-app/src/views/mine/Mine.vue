@@ -40,6 +40,7 @@ export default {
     }
   },
   methods:{
+    //注册
     registHandler(){
       axios({
         url:Url.registUser,
@@ -50,12 +51,11 @@ export default {
         }
       })
       .then(res=>{
-        if(res.data.code=200){
+        if(res.data.code==200){
          this.$toast.success('注册成功！');
         }else{
          this.$toast.fail('注册失败！');
         }
-
       })
       .catch(err=>{
          this.$toast.fail('注册失败！');
@@ -65,8 +65,33 @@ export default {
       this.confirmPassword='';
 
     },
+    //登录
     loginHandler(){
+       axios({
+        url:Url.loginUser,
+        method:'post',
+        data:{
+          userName:this.loginUsername,
+          password:this.loginPassword,
+        }
+      })
+      .then(res=>{
+        console.log(res);
+         if(res.data.code=200){
+         console.log("登录成功！");
+        }else{
+         this.$toast.fail('登录失败！');
+        }
 
+      })
+      .catch(err=>{
+            console.log(err);
+             this.$toast.fail('登录失败！');
+       
+      });
+      this.loginUsername=""
+      this.loginPassword=""
+    
     }
   }
 }
