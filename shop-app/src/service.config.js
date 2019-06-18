@@ -6,5 +6,7 @@ const URL={
     getHot:MOCKURL+"xxxx",
     registUser:SERVERURL+"user/registUser",//注册  user控制器  下的方法-->registUser
     loginUser:SERVERURL+"user/loginUser",
+    getTypes:SERVERURL+"type/getTypes",//商品类型
+    getProductByType:SERVERURL+"product/getProductByType"//商品信息
 }
 export default URL;

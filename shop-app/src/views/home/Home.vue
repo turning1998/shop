@@ -5,7 +5,7 @@
       <!-- header -->
       <van-nav-bar title="首页">
         <van-icon name="search" slot="left" />
-        <van-icon name="cart-o" slot="right" />
+        <van-icon @click="$router.push('mine');"   slot="right" >{{userInfo.userName}}</van-icon>
       </van-nav-bar>
     </div>
     <!--中间部分-->
@@ -52,6 +52,7 @@ import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
 import axios from 'axios'
 import url from '@/service.config.js'
+import {mapState} from 'vuex';
 export default {
   name: 'home',
   components: {
@@ -158,6 +159,9 @@ export default {
       console.log("获取商品列表失败");
     });
 
+  },
+  computed:{
+    ...mapState(['userInfo'])
   }
 }
 </script>
