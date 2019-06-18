@@ -166,9 +166,9 @@ export default {
 }
 </script>
 <style lang="scss">
-body{
+/*body{
   background-color: #c0c0c0;
-}
+}*/
 .home{
    &-title{
      position: fixed;
