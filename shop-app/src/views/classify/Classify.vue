@@ -21,11 +21,13 @@
                   </div>
                 </van-list>
             </van-pull-refresh>
-             
           </van-col>
-  
+     
       </van-row>
+  
+  
   </div>
+
 
 </template>
 
