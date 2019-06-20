@@ -4,6 +4,8 @@ import Home from './views/home/Home.vue'
 import Cart from './views/cart/Cart.vue'
 import Classify from './views/classify/Classify.vue'
 import Mine from './views/mine/Mine.vue'
+import Details from './views/classify/Details.vue'
+import CFooter from './components/CFooter.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -11,22 +13,45 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+     // component: Home
+     components:{
+       default:Home,
+       'cfooter':CFooter //配置footer
+     }
     },
     {
       path: '/mine',
       name: 'mine',
-      component: Mine
+     // component: Mine
+     components:{
+      default: Mine,
+      'cfooter':CFooter //配置footer
+    }
     },
     {
       path: '/cart',
       name: 'cart',
-      component: Cart
-    },
+     // component: Cart
+      components:{
+        default:  Cart,
+        'cfooter':CFooter //配置footer
+      }
+      },
+
     {
       path: '/classify',
       name: 'classify',
-      component: Classify
+      components:{
+        default: Classify,
+        'cfooter':CFooter
+
+
+      } 
     },
+    {
+      path:'/detail/:id',
+      name:'details',
+      component:Details,
+    }
   ]
 })

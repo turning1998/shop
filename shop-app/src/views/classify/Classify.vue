@@ -14,7 +14,7 @@
           <van-col span="18" class="container" >
             <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
                 <van-list @load="onLoad()" v-model="isLoading"    class="content" :finished="finished">
-                  <div class="content-item" :key="index"  v-for="(item,index) in  productList">
+                  <div @click="goDetail(item._id)"   class="content-item" :key="index"  v-for="(item,index) in  productList">
                     <img :src="item.img" alt="">
                     <p class="content-item-name">{{item.name}}</p>
                     <p>{{item.price}}</p>
@@ -103,6 +103,39 @@ export default {
       this.getProductList();
       },2000)
      
+
+    },
+    //商品详情
+    goDetail(id){
+      console.log(id);
+      //传参
+      /*this.$router.push({
+        path:'/details',
+        query:{
+          id:id
+        }
+      })
+      接收:consle.log(this.$route.query.id)==>url
+      类似get取参,  有详细的id，刷新id取不到
+      local:8080/detail?3823737
+
+      或
+        this.$router.push({
+        name:'details',
+        params:{
+            id:id
+        }
+      });
+       接收:consle.log(this.$route.params.id)==>没有参数，刷新id取不到
+        local:8080/detail
+      
+      或
+      this.$router.push(`/detail/${id}`)
+      在router.js中配置 path: '/detail/:id'
+      接收:consle.log(this.$route.params.id)
+      local:8080/detail/433434跟router配置一样,无？
+      */
+       this.$router.push(`/detail/${id}`)
 
     }
   }

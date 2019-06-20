@@ -6,20 +6,6 @@
       <van-tabbar-item icon="cart" to="cart" >购物车</van-tabbar-item>
       <van-tabbar-item icon="manager" to="mine" >我的</van-tabbar-item>
       </van-tabbar>
-   <!--  <ul class="footer">
-      <li class="footer-item">
-        <router-link to="/">首页</router-link>
-      </li>
-      <li class="footer-item">
-        <router-link to="/classify">分类</router-link>
-      </li>
-      <li class="footer-item">
-        <router-link to="cart" >购物车</router-link>
-       </li>
-      <li class="footer-item">
-        <router-link to="mine" >我的</router-link>
-        </li>
-    </ul> -->
 </template>
 <script>
 

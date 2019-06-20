@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <c-footer></c-footer>
+    <router-view name="cfooter"></router-view><!--可选-->
+    <!--<c-footer></c-footer>-->
   </div>
 </template>
 <script>
-import CFooter from './components/CFooter'
+//import CFooter from './components/CFooter'
 export default {
   name: 'app',
-  components: {
-    CFooter
+  //components: {
+   // CFooter
    
-  }
+  //}
 }
 </script>
 
